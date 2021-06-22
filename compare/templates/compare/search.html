@@ -1,0 +1,13 @@
+{% extends 'compare/base.html' %}
+
+{% block content %}
+
+<div>
+    <form action="{% url 'search:apparel' %}" method="get">
+        {% csrf_token %}
+       <input type="text" id="search_word" name="query" value="{{ request.GET.query }}">
+       <button id="search" type="submit">検索</button>
+    </form>
+</div>
+
+{% endblock %}

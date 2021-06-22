@@ -1,0 +1,26 @@
+{% extends 'compare/base.html' %}
+
+{% block content %}
+
+<p>{{ object_list.count }}件</p>
+{% include 'compare/pagenation-list.html' %}
+
+
+<table border="1">
+    <tr>
+        <th>image</th>
+        <th>name</th>
+        <th>price</th>
+    </tr>  
+    {% for apparel in object_list %}
+    
+        <tr>
+            <td><a href="{% url 'search:compare' %}"><img src="{{ apparel.images.url }}" alt=""></a></td>
+            <td><a href="{% url 'search:compare' %}">{{ apparel.name }}</a></td>
+            <td>{{ apparel.price }}</td>
+        </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}
