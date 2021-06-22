@@ -2,7 +2,22 @@
 
 {% block content %}
 
+<table border="1">
+    <tr>
+        <th>image</th>
+        <th>name</th>
+        <th>price</th>
+    </tr>  
+    {% for apparel in object_list %}
+    
+        <tr>
+            
+            <td>{{ apparel.price }}</td>
+            <td>{{ apparel.name }}</td>
+        </tr>
 
+    {% endfor %}
+</table>
 
 
 {% endblock %}

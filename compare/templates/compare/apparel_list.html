@@ -15,7 +15,7 @@
     {% for apparel in object_list %}
     
         <tr>
-            <td><a href="{% url 'search:compare' %}"><img src="{{ apparel.images.url }}" alt=""></a></td>
+            <td><a href="{% url 'search:compare' %}?name={{ apparel.name }}"><img src="{{ apparel.images.url }}" alt=""></a></td>
             <td><a href="{% url 'search:compare' %}">{{ apparel.name }}</a></td>
             <td>{{ apparel.price }}</td>
         </tr>

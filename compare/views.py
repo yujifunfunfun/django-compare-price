@@ -27,10 +27,19 @@ class ApparelList(ListView):
 
         return object_list
 
-class ComparePrice(View):
+class ComparePrice(ListView):
 
-    def compare_price(self):
+    def get_queryset(self):
+        n_word  = self.request.GET.get('name')
+
+        if n_word:
+            object_list = Apparel.objects.filter(
+                Q(name__icontains=n_word) 
+            )
+        else:
+            object_list = Apparel.objects.all()
+
+        return object_list
 
 
-
-       return render(request,'compare/compare.html')
+    
