@@ -63,14 +63,20 @@ class Logout(LogoutView):
 class FollowApparel(View):
     def get(self,request,pk):
 
-     apparel_list =  Apparel.objects.all()
-     apparel_hit = apparel_list.pk == pk
 
-     q = Favorite(
-       user_id=request.user,
-       item_id = pk,
-       name = apparel_hit.name
-     )
-     q.save()
-     return redirect('search:apparel')
+        apparel_list =  Apparel.objects.all()
+        for i in apparel_list:
+            if i.pk == pk:
+                image = i
+                name = i.name
+                price = i.price
+
+
+        q = Favorite(
+        user_id=request.user,
+        item_id = pk,
+        name = 
+        )
+        q.save()
+        return redirect('search:apparel')
 
