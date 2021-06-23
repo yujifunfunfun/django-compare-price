@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Apparel
+from .models import Apparel,Favorite
 
-admin.site.register(Apparel)
+admin.site.register(Favorite)

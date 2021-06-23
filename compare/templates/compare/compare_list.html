@@ -1,19 +1,24 @@
 {% extends 'compare/base.html' %}
 
 {% block content %}
+<img src="{{ compare_list }}" alt="">
 
 <table border="1">
     <tr>
-        <th>image</th>
-        <th>name</th>
+        
         <th>price</th>
+        <th>price</th>
+        <th>shop</th>
     </tr>  
-    {% for apparel in object_list %}
+    {% for apparel in compare_list %}
     
         <tr>
             
             <td>{{ apparel.price }}</td>
+            
             <td>{{ apparel.name }}</td>
+            <td>{{ apparel.shop }}</td>
+            <td><button>ショップへ行く</button></td>
         </tr>
 
     {% endfor %}

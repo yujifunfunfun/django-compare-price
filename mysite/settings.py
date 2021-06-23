@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,6 @@ MEDIA＿ROOT = os.path.join(BASE_DIR, 'media')
 
 # 画像をdjango側で読み込むための設定
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'
+

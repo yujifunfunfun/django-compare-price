@@ -13,13 +13,27 @@
         <th>price</th>
     </tr>  
     {% for apparel in object_list %}
-    
+    {% if user.is_authenticated %}
+        
         <tr>
             <td><a href="{% url 'search:compare' %}?name={{ apparel.name }}"><img src="{{ apparel.images.url }}" alt=""></a></td>
-            <td><a href="{% url 'search:compare' %}">{{ apparel.name }}</a></td>
+            <td><a href="{% url 'search:compare' %}?name={{ apparel.name }}">{{ apparel.name }}</a></td>
+            <td>{{ apparel.price }}</td>
+            <td>
+                <form action="{% url 'search:follow' apparel.pk %}" method="get">
+                    <button type="submit" name="button">お気に入り追加</button>
+                    {% csrf_token %}
+                </form>
+            </td>
+
+        </tr>
+    {% else %}
+        <tr>
+            <td><a href="{% url 'search:compare' %}?name={{ apparel.name }}"><img src="{{ apparel.images.url }}" alt=""></a></td>
+            <td><a href="{% url 'search:compare' %}?name={{ apparel.name }}">{{ apparel.name }}</a></td>
             <td>{{ apparel.price }}</td>
         </tr>
-
+    {% endif %}
     {% endfor %}
 </table>
 

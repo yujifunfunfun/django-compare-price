@@ -9,6 +9,28 @@
     <title>Document</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'search:search' %}">価格比較</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            {% if user.is_authenticated %}
+            <li>
+              <a class="nav-item nav-link" href="{% url 'search:logout' %}">ログアウト</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="{% url 'search:login' %}">
+              ログインはこちら
+            </a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
     {% block content %}{% endblock %}
 </body>
 </html>
