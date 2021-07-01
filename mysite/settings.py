@@ -82,10 +82,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dbmaster',
+        'USER': 'dbmasteruser',
+        'PASSWORD': '`>X5Q}&r5#i-ye3ox]i$:y4k?A]9o>&X',
+        'HOST': 'ls-1d0fb0af9e17745892be437633904adaf733fb42.cbqzklfqxham.ap-northeast-1.rds.amazonaws.com',
+    
+        },
     }
-}
+
 
 
 # Password validation
