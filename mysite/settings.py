@@ -138,7 +138,7 @@ STATIC_ROOT = '/usr/share/nginx/html/static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-MEDIA＿ROOT = '/usr/share/nginx/html/media'
+MEDIA_ROOT = '/usr/share/nginx/html/media'
 
 # 画像をdjango側で読み込むための設定
 MEDIA_URL = '/media/'
