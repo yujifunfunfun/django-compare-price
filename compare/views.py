@@ -75,7 +75,7 @@ class FollowApparel(View):
         q = Favorite(
         user_id=request.user,
         item_id = pk,
-        name = 
+        name = name
         )
         q.save()
         return redirect('search:apparel')
